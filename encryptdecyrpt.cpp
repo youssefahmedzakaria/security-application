@@ -1,9 +1,9 @@
 // FCAI – Programming 1 – 2022 - Assignment 2
-// Program Name: cipher program.cpp
+// Program Name: All_Ciphers.cpp
 // Last Modification Date: 27/3/2022
 // Author1 and ID and Group: Maryam Osama Mohammed 20211090 A
 // Author2 and ID and Group: Youssef Ahmed Zakaria 20210458 A
-// Author3 and ID and Group: Saif El-Din Hazem Mohammed
+// Author3 and ID and Group: Saif El-Din Hazem Mohammed 20210165 A
 
 
 #include <iostream>
@@ -18,11 +18,11 @@ void cipher(string message)
     int a =5,b=8;
     string alpha_upper="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     string alpha_lower="abcdefghijklmnopqrstuvwxyz";
-    for (int i=0; i< size(message); ++i ) //find each char in message
+    for (int i=0; i< message.length(); ++i ) //find each char in message
     {
         if(isupper(message[i]))
         {
-            for (int j = 0; j < size(alpha_upper); ++j)
+            for (int j = 0; j < alpha_upper.length(); ++j)
             {
                 if (alpha_upper[j] == message[i]) {
                     cout << alpha_upper[(a * j + b) % 26]; //Printing char whose index fulfills the equation
@@ -31,7 +31,7 @@ void cipher(string message)
         }
         else if(islower(message[i]))
         {
-            for (int j = 0; j < size(alpha_lower); ++j)
+            for (int j = 0; alpha_lower.length(); ++j)
             {
                 if (alpha_lower[j] == message[i]) {
                     cout << alpha_lower[(a * j + b) % 26]; //Printing char whose index fulfills the equation
@@ -49,10 +49,10 @@ void  decipher(string message)
     int b=8,c=21;
     string alpha_upper="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     string alpha_lower="abcdefghijklmnopqrstuvwxyz";
-    for (int i=0; i< size(message); ++i ) //find each char in message
+    for (int i=0; i< message.length(); ++i ) //find each char in message
     {
         if(isupper(message[i])) {
-            for (int j = 0; j < size(alpha_upper); ++j) {
+            for (int j = 0; j < alpha_upper.length(); ++j) {
                 if (message[i] == alpha_upper[j]) {
                     x = c * (j - b);
                     if (x < 0) {
@@ -67,7 +67,7 @@ void  decipher(string message)
         }
         else if(islower(message[i]))
         {
-            for (int j = 0; j < size(alpha_lower); ++j) {
+            for (int j = 0; j < alpha_lower.length(); ++j) {
                 if (message[i] == alpha_lower[j]) {
                     x = c * (j - b);
                     if (x < 0) {
@@ -108,11 +108,11 @@ void cipher(string message,int shift)
     shift=(shift%26+26)%26;
     string alpha_upper="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     string alpha_lower="abcdefghijklmnopqrstuvwxyz";
-    for (int i = 0; i <size(message) ; ++i)
+    for (int i = 0; i <message.length(); ++i)
     {
         if(isupper(message[i]))
         {
-            for (int j = 0; j < size(alpha_upper); ++j)
+            for (int j = 0; j < alpha_upper.length(); ++j)
             {
                 if (message[i] == alpha_upper[j])
                 {
@@ -125,7 +125,7 @@ void cipher(string message,int shift)
         }
         else if(islower(message[i]))
         {
-            for (int j = 0; j < size(alpha_lower); ++j)
+            for (int j = 0; j < alpha_lower.length(); ++j)
             {
                 if (message[i] == alpha_lower[j])
                 {
@@ -145,11 +145,11 @@ void decipher(string message,int shift)
     shift=(shift%26+26)%26;
     string alpha_upper="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     string alpha_lower="abcdefghijklmnopqrstuvwxyz";
-    for (int i = 0; i <size(message) ; ++i)
+    for (int i = 0; i <message.length() ; ++i)
     {
         if(isupper(message[i]))
         {
-            for (int j = 0; j < size(alpha_upper); ++j)
+            for (int j = 0; j < alpha_upper.length(); ++j)
             {
                 if (message[i] == alpha_upper[j])
                 {
@@ -162,7 +162,7 @@ void decipher(string message,int shift)
         }
         else if(islower(message[i]))
         {
-            for (int j = 0; j < size(alpha_lower); ++j)
+            for (int j = 0; j < alpha_lower.length(); ++j)
             {
                 if (message[i] == alpha_lower[j])
                 {
@@ -203,18 +203,18 @@ void cipher2(string message)
 {
     string upper_case="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     string lower_case="abcdefghijklmnopqrstuvwxyz";
-    for (int i = 0; i < size(message); ++i)
+    for (int i = 0; i < message.length(); ++i)
     {
         if(isupper(message[i]))
         {
-            for (int j = 0; j < upper_case.size(); ++j) {
+            for (int j = 0; j < upper_case.length(); ++j) {
                 if (message[i] == upper_case[j])
                     cout << upper_case[25 - j];
             }
         }
         else if(islower(message[i]))
         {
-            for (int j = 0; j < lower_case.size(); ++j) {
+            for (int j = 0; j < lower_case.length(); ++j) {
                 if (message[i] == lower_case[j])
                     cout << lower_case[25 - j];
             }
@@ -228,18 +228,18 @@ void decipher2(string message)
 {
     string upper_case="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     string lower_case="abcdefghijklmnopqrstuvwxyz";
-    for (int i = 0; i < size(message); ++i)
+    for (int i = 0; i < message.length(); ++i)
     {
         if(isupper(message[i]))
         {
-            for (int j = 0; j < upper_case.size(); ++j) {
+            for (int j = 0; j < upper_case.length(); ++j) {
                 if (message[i] == upper_case[j])
                     cout << upper_case[25 - j];
             }
         }
         else if(islower(message[i]))
         {
-            for (int j = 0; j < lower_case.size(); ++j) {
+            for (int j = 0; j < lower_case.length(); ++j) {
                 if (message[i] == lower_case[j])
                     cout << lower_case[25 - j];
             }
@@ -264,9 +264,9 @@ int cipher2()
         getline(cin,mess);
     }
     if(num==1)
-        cipher(mess);
+        cipher2(mess);
     else if(num==2)
-        decipher(mess);
+        decipher2(mess);
 }
 char userMsg[120];
 
@@ -413,7 +413,7 @@ int cipher4() {
     string message;
     bool isDone = false;
     while (isDone == false) {
-        cout << "ahlan yasta 3ayz ehh enhrda? \n";
+        cout << "what do you like to do? \n";
         cout << "\n 1-ciphering \n 2-deciphering \n 3-end program\n";
         cin >> choice;
         switch (choice) {
@@ -703,6 +703,81 @@ void morseCode(string s)
     cout << endl;
 }
 
+int cipher6(){
+    //Taking Input From User
+
+    cout<<"What do you like to do ?"<<endl<<"1- Cipher a message"<<endl<<"2- Decipher a message"<<endl<<"3- End"<<endl;
+    int num;
+    cin>>num;
+
+
+
+
+    //Taking String From User & Uppercase All Its Characters & Key
+    cout <<"Please enter the key :- \n";
+    char n1,n2,n3,n4,n5;
+    cin >>n1>>n2>>n3>>n4>>n5;
+
+    string userMsg="";
+    cout<<"Enter a message : "<<endl;
+    while(userMsg.empty())
+    {
+        getline(cin,userMsg);
+    }
+    transform(userMsg.begin(), userMsg.end(), userMsg.begin(), ::toupper);
+
+
+
+    //Making The 2D Array Using The Taken Key
+    char arr[6][6];
+    arr[1][1]=' '; arr[1][2] = n1; arr[1][3] = n2; arr[1][4] = n3; arr[1][5] = n4; arr[1][6]= n5;
+    arr[2][1]=n1; arr[2][2] = 'A'; arr[2][3] = 'B'; arr[2][4] = 'C'; arr[2][5] = 'D'; arr[2][6]= 'E';
+    arr[3][1]=n2; arr[3][2] = 'F'; arr[3][3] = 'G'; arr[3][4] = 'H'; arr[3][5] = 'J'; arr[3][6]= 'K';
+    arr[4][1]=n3; arr[4][2] = 'L'; arr[4][3] = 'M'; arr[4][4] = 'N'; arr[4][5] = 'O'; arr[4][6]= 'P';
+    arr[5][1]=n4; arr[5][2] = 'Q'; arr[5][3] = 'R'; arr[5][4] = 'S'; arr[5][5] = 'T'; arr[5][6]= 'U';
+    arr[6][1]=n5; arr[6][2] = 'V'; arr[6][3] = 'W'; arr[6][4] = 'X'; arr[6][5] = 'Y'; arr[6][6]= 'Z';
+
+
+    if(num==3)
+        return 0;
+
+    else if (num==1){
+        string cipher="";
+        for (int i=0; i<userMsg.length(); i++){
+            for (int j=1; j<7; j++){
+                for (int k=1; k<7; k++){
+                    if (char(userMsg[i]) == char(arr[j][k])){
+                        cipher += arr[k][1];
+                        cipher += arr[1][j];
+
+                    }
+                }
+            }
+        }
+
+        cout<<"Ciphered Message Is:- "<<cipher; }
+
+    else if (num ==2){
+        string decipher="";
+
+        for (int i=0; i<userMsg.length(); i+=2){
+            for (int j=1;j<=6;j++){
+                for (int k = 1; k<=6; k++){
+                    if(userMsg[i] ==arr[j][1]){
+                        int row =j;
+                        if(userMsg[i+1]==arr[1][k]){
+                            int column = k;
+                            decipher +=arr[row][column];
+                        }
+                    }
+                }
+            }
+        }
+
+        cout<<"Deciphered Message Is :- "<<decipher;}
+
+}
+
 int cipher7()
 {
     string decrypted;
@@ -797,7 +872,7 @@ int cipher9()
 
             vector<char> lines[key];
             bool flag = true;
-            for (int i = 0, j = 0;i < word.size();i++) {
+            for (int i = 0, j = 0;i < word.length();i++) {
                 lines[j].push_back(word[i]);
                 if (j == key - 1) flag = false;
                 if (flag == false && j == 0) flag = true;
@@ -822,7 +897,7 @@ int cipher9()
         cout << "Enter the key: " << endl;
         bool flag = true;
         int lineSize[key] ;
-        for (int i = 0, j = 0;i < word.size();i++) {
+        for (int i = 0, j = 0;i < word.length();i++) {
             lineSize[j]++;
             if (j == key - 1) flag = false;
             if (flag == false && j == 0) flag = true;
@@ -839,7 +914,7 @@ int cipher9()
         }
 
         int arr[key] ;
-        for (int i = 0, j = 0;i < word.size();i++) {
+        for (int i = 0, j = 0;i < word.length();i++) {
             cout << lines2[j][arr[j]];
             arr[j]++;
             if (j == key - 1) flag = false;
@@ -858,31 +933,32 @@ int cipher9()
 
 int main()
 {
- int cipher;
- cout<<"0. Affine Cipher"<<endl<<"1. Caesar Cipher"<<endl<<"2. Atbash Cipher"<<endl<<"3. Vignere Cipher"<<endl;
- cout<<"4. Baconian Cipher"<<endl<<"5. Simple Substitution Cipher"<<endl<<"6. Polybius Square Cipher"<<endl<<"7. Morse Code"<<endl<<"8. XOR Cipher"<<endl<<"9. Rail-fence Cipher"<<endl;
-cout<<"enter number of cipher: "<<endl;
-cin>>cipher;
-if (cipher == 0)
-cipher0();
-else if (cipher == 1)
-cipher1();
-else if (cipher == 2)
-cipher2();
-else if (cipher == 3)
-cipher3();
-else if (cipher == 4)
-cipher4();
-else if (cipher == 5)
-cipher5();
-else if (cipher == 6)
-cipher6();
-else if (cipher == 7)
-cipher7();
-else if (cipher == 8)
-cipher8();
-else if (cipher == 9)
-cipher9();
-else
-    cout<<"error, enter another number ";
+    int cipher;
+    cout<< "Please choose the cipher you need to use :-\n";
+    cout<<"0. Affine Cipher"<<endl<<"1. Caesar Cipher"<<endl<<"2. Atbash Cipher"<<endl<<"3. Vignere Cipher"<<endl;
+    cout<<"4. Baconian Cipher"<<endl<<"5. Simple Substitution Cipher"<<endl<<"6. Polybius Square Cipher"<<endl<<"7. Morse Code"<<endl<<"8. XOR Cipher"<<endl<<"9. Rail-fence Cipher"<<endl;
+    cout<<"enter number of cipher: "<<endl;
+    cin>>cipher;
+    if(cipher==0)
+        cipher0();
+    else if(cipher==1)
+        cipher1();
+    else if(cipher==2)
+        cipher2();
+    else if(cipher==3)
+        cipher3();
+    else if(cipher==4)
+        cipher4();
+    else if(cipher==5)
+        cipher5();
+    else if(cipher==6)
+        cipher6();
+    else if(cipher==7)
+        cipher7();
+    else if(cipher==8)
+        cipher8();
+    else if(cipher==9)
+        cipher9();
+    else
+        cout<<"Error, enter another number : ";
 }
